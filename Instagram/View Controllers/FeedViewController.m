@@ -10,7 +10,7 @@
 #import "SceneDelegate.h"
 #import "LoginViewController.h"
 
-@interface FeedViewController ()
+@interface FeedViewController () 
 
 @end
 
