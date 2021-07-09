@@ -26,8 +26,8 @@
     
     if (user != nil) {
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-        UIViewController *feedNavigationController = [storyboard instantiateViewControllerWithIdentifier:@"FeedNavigationController"];
-        self.window.rootViewController = feedNavigationController;
+        UIViewController *tabBarController= [storyboard instantiateViewControllerWithIdentifier:@"TabBarController"];
+        self.window.rootViewController = tabBarController;
     }
 }
 

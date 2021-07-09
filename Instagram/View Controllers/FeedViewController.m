@@ -11,10 +11,11 @@
 #import "LoginViewController.h"
 #import "PostCell.h"
 #import "DetailsViewController.h"
+#import "ComposeViewController.h"
 
-@interface FeedViewController () <UITableViewDelegate, UITableViewDataSource>
+@interface FeedViewController () <ComposeViewControllerDelegate, UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (strong, nonatomic) NSArray *postsArray;
+@property (strong, nonatomic) NSMutableArray *postsArray;
 @property (nonatomic, strong) UIRefreshControl *refreshControl;
 
 @end
@@ -43,7 +44,7 @@
     [query findObjectsInBackgroundWithBlock:^(NSArray *posts, NSError *error) {
         if (posts != nil) {
             // do something with the array of object returned by the call
-            self.postsArray = posts;
+            self.postsArray = [NSMutableArray arrayWithArray:posts];
             
             [self.tableView reloadData];
             
@@ -71,9 +72,7 @@
     PostCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PostCell"];
         
     cell.post = self.postsArray[indexPath.row];
-    
-    NSLog(@"%@", cell.post);
-        
+            
     [cell refreshData];
     
     return cell;
@@ -83,18 +82,31 @@
     return self.postsArray.count;
 }
 
+- (void)didPost:(nonnull Post *)post {
+    [self.postsArray insertObject:post atIndex:0];
+    
+    [self.tableView reloadData];
+}
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
-    UITableViewCell *tappedCell = sender;
-    NSIndexPath *indexPath = [self.tableView indexPathForCell:tappedCell];
-    Post *post = self.postsArray[indexPath.row];
-    
-    DetailsViewController *detailsViewController = [segue destinationViewController];
-    detailsViewController.post = post;
+    if ([segue.identifier isEqual:@"composeView"]) {
+        UINavigationController *navigationController = [segue destinationViewController];
+        ComposeViewController *composeController = (ComposeViewController*)navigationController.topViewController;
+        composeController.delegate = self;
+    }
+    else {
+        UITableViewCell *tappedCell = sender;
+        NSIndexPath *indexPath = [self.tableView indexPathForCell:tappedCell];
+        Post *post = self.postsArray[indexPath.row];
+        
+        DetailsViewController *detailsViewController = [segue destinationViewController];
+        detailsViewController.post = post;
+    }
 }
 
 

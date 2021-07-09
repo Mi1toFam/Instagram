@@ -1,5 +1,5 @@
-//  Post.m
 #import "Post.h"
+
 @implementation Post
     
 @dynamic postID;
@@ -9,10 +9,12 @@
 @dynamic image;
 @dynamic likeCount;
 @dynamic commentCount;
+@dynamic createdAtString;
 
 + (nonnull NSString *)parseClassName {
     return @"Post";
 }
+
 
 + (void) postUserImage: ( UIImage * _Nullable )image withCaption: ( NSString * _Nullable )caption withCompletion: (PFBooleanResultBlock  _Nullable)completion {
     
