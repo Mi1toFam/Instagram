@@ -29,19 +29,6 @@
         imagePickerVC.sourceType = UIImagePickerControllerSourceTypeCamera;
     }
     else {
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Note"
-                                                      message: @"Camera 🚫 available so we will use photo library instead"
-                                                      preferredStyle:(UIAlertControllerStyleAlert)];
-        // create an OK action
-        UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK"
-                                                 style:UIAlertActionStyleDefault
-                                                  handler:^(UIAlertAction * _Nonnull action) {}];
-        // add the OK action to the alert controller
-        [alert addAction:okAction];
-        [self presentViewController:alert animated:YES completion:^{
-            // optional code for what happens after the alert controller has finished presenting
-        }];
-        
         imagePickerVC.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
     }
 
