@@ -52,7 +52,11 @@ Logging in and user login persistence.
 
 Viewing the feed and going to the details view of a Post.
 
+![instagram_feed](https://user-images.githubusercontent.com/65626248/125147456-69b6d380-e0f9-11eb-8d63-cc03ca9caa10.gif)
+
 Composing a new Post.
+
+![Uploading instagram_compose.gif…]()
 
 Viewing the user profile.
 
