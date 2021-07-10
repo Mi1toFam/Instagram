@@ -43,9 +43,11 @@ Please list two areas of the assignment you'd like to **discuss further with you
 Here's a walkthrough of implemented user stories:
 
 Launch screen, signing up, and logging out.
+
 ![instagram_launch](https://user-images.githubusercontent.com/65626248/125143788-cb6f4180-e0e9-11eb-9aea-5f3642aeea3b.gif)
 
 Logging in and user login persistence.
+
 ![instagram_login](https://user-images.githubusercontent.com/65626248/125143820-e5108900-e0e9-11eb-8ab6-e538253b533d.gif)
 
 Viewing the feed and going to the details view of a Post.
@@ -53,9 +55,11 @@ Viewing the feed and going to the details view of a Post.
 Composing a new Post.
 
 Viewing the user profile.
+
 ![instagram_profile](https://user-images.githubusercontent.com/65626248/125143917-315bc900-e0ea-11eb-83de-f6afbc2ff5a9.gif)
 
 Autolayout for user feed.
+
 ![instagram_autolayout](https://user-images.githubusercontent.com/65626248/125143923-3751aa00-e0ea-11eb-91f6-a5b06203cf90.gif)
 
 
