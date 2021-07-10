@@ -56,7 +56,7 @@ Viewing the feed and going to the details view of a Post.
 
 Composing a new Post.
 
-![Uploading instagram_compose.gif…]()
+![instagram_compose](https://user-images.githubusercontent.com/65626248/125147660-ba7afc00-e0fa-11eb-83db-04c7d501a77d.gif)
 
 Viewing the user profile.
 
